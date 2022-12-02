@@ -1,0 +1,63 @@
+.bannerimage {
+  width: 100%;
+  background-image: url("unt_banner.png");
+  height: 150px;
+  background-position: center;
+}
+
+#searchboxandsubmit {
+  float: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: roman;
+  font-size: 34px;
+}
+p {
+  color: rgb(8, 8, 8);
+  text-align: center;
+  font-family: timesnewroman;
+  font-size: 20px;
+}
+form {
+	color: white;
+	text-align: center;
+	font-family: timesnewroman;
+	font-size: 16px;
+}
+#prediction{
+	background-color: white;
+	color: black;
+	margin: auto;
+	text-align: center;
+	font-family: timesnewroman;
+	font-size: 16px;
+	width: 150px;
+	padding: 50px;
+}
+#searchresults{
+	margin: auto;
+	text-align: center;
+}
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #777;
+   color: white;
+   text-align: center;
+   padding: 7px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.results {
+  max-height: 600px;
+  overflow-y : scroll;
+}

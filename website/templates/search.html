@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>UNT Search Engine</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_unt_search.css') }}">
+    </head>
+    <body>
+
+        <div class="bannerimage">
+        </div>
+
+        <form action="/handleSearch" method="post" enctype="multipart/form-data">
+                <div id="searchboxandsubmit">
+                    <input type="text" id="searchtext" name="searchtext" value="{{request.form['searchtext']}}"/>
+                    <input type="submit" value="Search"/>
+                </div>
+        </form>
+
+        <div class="container">
+            <div class="center">
+                <p>Search Results:</p>
+                <div class="results">
+                    {% for table in tables %}
+                            {{ table|safe }}
+                    {% endfor %}
+                </div>
+            </div>
+          </div>
+
+        <footer>
+            <p>Credits: Naga Sumanth Vankadari, Jerline Jeyaraj, Lewis Edberg, Akhil Kumar</p>
+            <p>© 2022, University of North Texas </p>
+        </footer>
+
+        </div>
+    </body>
+</html> 
