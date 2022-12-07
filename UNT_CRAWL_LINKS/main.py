@@ -9,20 +9,23 @@ l=[]
 class Untspider(Spider):
 
     name = 'myUntSpider'
+
     #start_urls=['https://www.unt.edu/search-results?search=&sa=Search']
     start_urls = ['https://ci.unt.edu/sitemap']
     #start_urls = ['https://www.unt.edu']
-    allowed_domains=['unt.edu']
+
+    allowed_domains = ['unt.edu']
     try:
         os.remove('myuntsavesitemap.txt')
     except OSError:
         pass
     custom_settings = {
         'CONCURRENT_REQUEST' : 2,
-        'AUTO_THROTTLE_ENABLED' : True
+        'AUTO_THROTTLE_ENABLED' : True,
+        'DEPTH_LIMIT': '2'
     }
     def __init__(self):
-        self.link_extractor = LinkExtractor(allow="https://www.unt.edu/" , unique = True)
+        self.link_extractor = LinkExtractor(allow_domains=("unt.edu"),deny_domains=("digital.library.unt.edu", "library.unt.edu" ,"webarchive.library.unt.edu" , "texashistory.unt.edu"),unique = True)
     def parse(self, response):
 
         for link in self.link_extractor.extract_links(response):
